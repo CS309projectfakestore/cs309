@@ -44,9 +44,9 @@ res.status(200).json("Cart has been deleted...")
 });
 
 //GET USER CART 
-router.get("/find/:id", verifyTokenAndAuthorization, async(req,res)=>{
+router.get("/find/:userId", verifyTokenAndAuthorization, async(req,res)=>{
     try{
-    const cart = await Cart.findOne({userId: req.params.id});
+    const cart = await Cart.findOne({userId: req.params.userId});
         res.status(200).json(cart);
     }catch(err){
         res.status(500).json(err)
