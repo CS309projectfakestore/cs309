@@ -38,7 +38,7 @@ try{
     user.password,
      process.env.PASS_SEC
      );
-     const Originalpassword = hashedPassword.toString(CryptoJS.enc.Utf8);
+     const Originalpassword = hashedPassword.toString(CryptoJS.enc.Utf);
         Originalpassword!==req.body.password &&
         res.status(401).json("wrong informations!");
         const accessToken = jwt.sign({
